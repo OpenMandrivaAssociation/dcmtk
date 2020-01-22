@@ -17,6 +17,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	tiff-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	wrap-devel
+BuildRequires:	pkgconfig(openjpeg)
 
 %description
 DCMTK is a collection of libraries and applications implementing large parts
