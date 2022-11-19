@@ -1,15 +1,16 @@
 %define major		3
-%define libname		%mklibname dcmtk %major
+%define oldlibname	%mklibname dcmtk 3
+%define libname		%mklibname dcmtk
 %define develname	%mklibname dcmtk -d
 
 Name:		dcmtk
-Version:	3.6.5
+Version:	3.6.7
 Release:	1
 Summary:	DICOM libraries and applications
 Group:		System/Libraries
 License:	BSD and MIT
 URL:		http://dicom.offis.de/dcmtk.php.en
-Source0:	%{name}-%{version}.tar.gz
+Source0:	https://dicom.offis.de/download/dcmtk/dcmtk%(echo %{version} |sed -e 's,\.,,g')/dcmtk-%{version}.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	zlib-devel
@@ -37,6 +38,7 @@ a building block for research projects, prototypes and commercial products.
 %package -n %{libname}
 Summary:	DICOM libraries
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 DCMTK is a collection of libraries and applications implementing large parts
@@ -154,6 +156,6 @@ mv %{buildroot}%{_prefix}/etc %{buildroot}/
 %{_includedir}/dcmtk/
 %{_libdir}/cmake/dcmtk/DCMTKConfig.cmake
 %{_libdir}/cmake/dcmtk/DCMTKConfigVersion.cmake
-%{_libdir}/cmake/dcmtk/DCMTKTargets-release.cmake
 %{_libdir}/cmake/dcmtk/DCMTKTargets.cmake
-
+%{_libdir}/cmake/dcmtk/DCMTKTargets-*.cmake
+%{_libdir}/pkgconfig/dcmtk.pc
