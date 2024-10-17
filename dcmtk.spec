@@ -9,7 +9,7 @@ Release:	2
 Summary:	DICOM libraries and applications
 Group:		System/Libraries
 License:	BSD and MIT
-URL:		http://dicom.offis.de/dcmtk.php.en
+URL:		https://dicom.offis.de/dcmtk.php.en
 Source0:	https://dicom.offis.de/download/dcmtk/dcmtk%(echo %{version} |sed -e 's,\.,,g')/dcmtk-%{version}.tar.gz
 
 BuildRequires:	cmake
