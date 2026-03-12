@@ -4,12 +4,12 @@
 %define devname		%mklibname dcmtk -d
 
 Name:		dcmtk
-Version:	3.6.9
+Version:	3.7.0
 Release:	1
 Summary:	DICOM libraries and applications
 Group:		System/Libraries
 License:	BSD and MIT
-URL:		https://dicom.offis.de/dcmtk.php.en
+URL:		https://dcmtk.org/en/dcmtk/
 Source0:	https://dicom.offis.de/download/dcmtk/dcmtk%(echo %{version} |sed -e 's,\.,,g')/dcmtk-%{version}.tar.gz
 Patch0:		dcmtk-3.6.9-fix_installation_paths.patch
 BuildRequires:	cmake ninja
